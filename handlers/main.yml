@@ -1,6 +1,12 @@
 ---
 
-- name: restart traefik
-  supervisorctl:
-    name: traefik
-    state: restarted
+- name: restart traefic
+  service:
+     name: traefik
+     state: restarted
+
+- name: start traefic
+  service:
+     name: traefik
+     state: started
+     

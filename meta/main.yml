@@ -1,20 +1,14 @@
 galaxy_info:
-  author: Jérémy Baumgarth
-  description: Download, install and configure Traefik
-  company: Amiral Web
+  author: Ekaterina Evdokimova
+  description: Download, install, configure and start Traefic
+  company: GIG Technology NV
   license: MIT
-  min_ansible_version: 2.1
+  min_ansible_version: 2.7
   github_branch: master
   platforms:
     - name: Ubuntu
       versions:
-      - trusty
-      - xenial
-    - name: Debian
-      versions:
-      - jessie
-  galaxy_tags:
-    - docker
-    - reverse_proxy
-    - load_balancer
+        - xenial
+        - bionic
+  galaxy_tags: []
 dependencies: []
