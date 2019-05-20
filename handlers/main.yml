@@ -1,12 +1,12 @@
 ---
 
-- name: restart traefic
+- name: restart traefik
   service:
      name: traefik
      state: restarted
 
-- name: start traefic
-  service:
-     name: traefik
-     state: started
-     
+    
+- name: reload systemd
+  systemd:
+    daemon_reload: yes
+

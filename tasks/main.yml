@@ -15,11 +15,20 @@
     owner: root
     group: root
     mode: 0755
+    force: yes
   notify: restart traefik
   with_items:
     - url: "{{ traefik_binary_url }}"
       dest: "{{ traefik_bin_path }}"
 
+- name: Create the Traefik server systemd config
+  template:
+    src: traefik.service.j2
+    dest: "/etc/systemd/system/traefik.service"
+    owner: "root"
+    group: "root"
+  notify: reload systemd
+  
 - name: config
   template:
     src: "{{ item }}.j2"
@@ -33,10 +42,8 @@
   notify: restart traefik
   tags: traefik_config
 
-- name: Create the Traefik server systemd config
-  template:
-    src: traefik.service.j2
-    dest: "/etc/systemd/system/traefik.service"
-    owner: "root"
-    group: "root"
-  when: ansible_service_mgr == "systemd"
+- name: start traefik
+  service:
+     enabled: yes
+     name: traefik
+     state: started

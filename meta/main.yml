@@ -1,6 +1,6 @@
 galaxy_info:
   author: Ekaterina Evdokimova
-  description: Download, install, configure and start Traefic
+  description: Download, install, configure and start Traefik
   company: GIG Technology NV
   license: MIT
   min_ansible_version: 2.7

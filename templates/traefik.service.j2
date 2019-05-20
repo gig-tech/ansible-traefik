@@ -5,7 +5,7 @@ Description=Traefik
 
 [Service]
 Type=notify
-ExecStart={{ traefik_bin_path }} --configFile={{ traefik_config_dir }/traefik.toml
+ExecStart={{ traefik_bin_path }} --configFile={{ traefik_config_dir }}/traefik.toml
 Restart=on-failure
 
 [Install]
